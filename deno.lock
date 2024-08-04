@@ -1,0 +1,45 @@
+{
+  "version": "3",
+  "remote": {
+    "https://edge.netlify.com/": "fd941d61d88673d5f28aab283fb86fcc50f08a3bc80ee5470498fcfa88c65cfb",
+    "https://edge.netlify.com/bootstrap/config.ts": "0aa0a225d978b89e0e62cbd853701605199e7a84095e55eeb70147faf1a24803",
+    "https://edge.netlify.com/bootstrap/context.ts": "f8392d0bfc4a345f0508157a9ed1a8b0ac832275e5ae6fe9301a8268fbfeb0b5",
+    "https://edge.netlify.com/bootstrap/cookie.ts": "8b0baae708989ca183c6f3b4ab3d029e6abcbc2e43f93edeb0ff447b3bbc3a05",
+    "https://edge.netlify.com/bootstrap/edge_function.ts": "b8253e86aa83c67341f5cfedeba5049d77fbf84dcab7eceff7566b7728ae9b39",
+    "https://edge.netlify.com/bootstrap/globals/types.ts": "a92107bafea2f88f9c7f787575732436abc40e45ccc062c76093096e7c34c84b"
+  },
+  "workspace": {
+    "packageJson": {
+      "dependencies": [
+        "npm:@astrojs/check@^0.9.1",
+        "npm:@astrojs/mdx@^3.1.3",
+        "npm:@astrojs/netlify@^5.5.0",
+        "npm:@astrojs/react@^3.6.1",
+        "npm:@astrojs/sitemap@^3.1.6",
+        "npm:@astrojs/tailwind@^5.1.0",
+        "npm:@eslint/js@^9.8.0",
+        "npm:@fontsource-variable/pixelify-sans@^5.0.3",
+        "npm:@fontsource/wellfleet@^5.0.20",
+        "npm:@iconify-json/bxs@^1.1.10",
+        "npm:@iconify-json/simple-icons@^1.1.111",
+        "npm:@types/react-dom@^18.3.0",
+        "npm:@types/react@^18.3.3",
+        "npm:astro-icon@^1.1.0",
+        "npm:astro-seo@^0.8.4",
+        "npm:astro@^4.13.1",
+        "npm:class-variance-authority@^0.7.0",
+        "npm:eslint-config-prettier@^9.1.0",
+        "npm:eslint-plugin-astro@^1.2.3",
+        "npm:eslint@^9.8.0",
+        "npm:globals@^15.9.0",
+        "npm:prettier-plugin-astro@^0.14.1",
+        "npm:prettier@^3.3.3",
+        "npm:react-dom@^18.3.1",
+        "npm:react@^18.3.1",
+        "npm:tailwindcss@^3.4.7",
+        "npm:typescript-eslint@^8.0.0",
+        "npm:typescript@^5.5.4"
+      ]
+    }
+  }
+}
