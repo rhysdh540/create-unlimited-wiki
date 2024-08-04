@@ -1,16 +1,34 @@
 ---
-
+import MainLayout from "@/layouts/MainLayout.astro";
+import button from "@/components/Button/Button";
+import { Icon } from "astro-icon/components";
+import logo from "@/assets/brand/main-logo.png";
+import { Image } from "astro:assets";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout>
+  <Fragment slot="body-content">
+    <div class="container mx-auto">
+      <div class="p-4 lg:p-18 grid place-items-center min-h-screen">
+        <div class="">
+          <Image src={logo} inferSize alt={`Create Unlimited Logo`} class="container" />
+          <p class="lg:text-lg lg:max-w-extraBlog lg:mx-auto my-4 lg:text-center">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro, itaque sint. Enim facere nesciunt, et pariatur quidem dolores quia ratione
+            omnis eaque sint magni minima non, exercitationem laboriosam aperiam aliquid libero. Praesentium deleniti illum eaque?
+          </p>
+          <div class="gap-4 flex items-center flex-col">
+            <button class={button({ size: "lg" })}>Check out the wiki</button>
+            <div class="flex flex-col lg:flex-row gap-4">
+              <button class={button({ intent: "secondary", size: "base" })}
+                ><Icon name={`simple-icons:modrinth`} class="text-3xl mr-2" aria-hidden="true" />Download the mod on Modrinth</button
+              >
+              <button class={button({ intent: "accent", size: "base" })}
+                ><Icon name={`simple-icons:curseforge`} class="text-3xl mr-2" aria-hidden="true" />Download the mod on CurseForge</button
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Fragment>
+</MainLayout>

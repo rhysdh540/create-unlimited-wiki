@@ -1,0 +1,22 @@
+---
+import logo from "@/assets/brand/main-logo-wo-minecraft.png";
+import { Image } from "astro:assets";
+const url = Astro.url;
+---
+
+{
+  () => {
+    return (
+      <nav class="shadow-2xl shadow-amber-950">
+        <div class="container mx-auto">
+          <div class="flex items-center p-4">
+            <a href="/" class="flex items-center">
+              <Image src={logo} alt="Create Unlimited Logo" inferSize class={`max-w-48 lg:max-w-96`} />
+              <span class="text-5xl ml-4 font-headings">WIKI</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    );
+  }
+}
