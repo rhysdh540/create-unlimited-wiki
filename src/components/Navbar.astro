@@ -1,7 +1,8 @@
 ---
 import logo from "@/assets/brand/main-logo-wo-minecraft.png";
 import { Image } from "astro:assets";
-const url = Astro.url;
+import button from "@/components/Button/Button";
+import { Icon } from "astro-icon/components";
 ---
 
 {
@@ -9,14 +10,34 @@ const url = Astro.url;
     return (
       <nav class="shadow-2xl shadow-amber-950">
         <div class="container mx-auto">
-          <div class="flex items-center p-4">
-            <a href="/" class="flex items-center">
+          <div class="flex items-center p-4 gap-4 flex-wrap">
+            <a href="/" class="flex items-center mr-auto">
               <Image src={logo} alt="Create Unlimited Logo" class={`max-w-48 lg:max-w-96`} />
-              <span class="text-5xl ml-4 font-headings">WIKI</span>
             </a>
+            <button class={button({ intent: "outline", width: "auto", size: "sm", class: "lg:hidden" })} id="navButton">
+              <Icon name={`bxs:dock-top`} class="text-5xl" aria-hidden="true" />
+            </button>
+            <div class=" flex flex-col hidden lg:flex gap-4 lg:items-center w-full lg:w-auto lg:flex-row  " id="navMenu">
+              <a href="/wiki" class={button({ intent: "outline" })}>
+                Wiki
+              </a>
+              <a href="https://discord.gg/GeGm3DRDWY" class={button({ intent: "outline" })}>
+                <Icon name={`simple-icons:discord`} class="text-5xl mr-2" aria-hidden="true" />
+                Discord
+              </a>
+            </div>
           </div>
         </div>
       </nav>
     );
   }
 }
+
+<script>
+  const navMenu = document.querySelector<HTMLDivElement>("#navMenu");
+  const navMenuButton = document.querySelector<HTMLButtonElement>("#navButton");
+
+  navMenuButton?.addEventListener("click", () => {
+    navMenu?.classList.toggle("hidden");
+  });
+</script>
