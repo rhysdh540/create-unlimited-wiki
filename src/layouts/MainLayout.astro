@@ -32,8 +32,27 @@ console.log(Astro.url.pathname);
     }}
   >
     <TopBodyScripts />
-    {Astro.url.pathname === "/" ? <Navbar /> : <WikiNavigation />}
-    <slot name="body-content" />
+
+    {
+      () => {
+        if (Astro.url.pathname === "/") {
+          return (
+            <Fragment>
+              <Navbar />
+              <slot name="body-content" />
+            </Fragment>
+          );
+        } else if (Astro.url.pathname.includes("/wiki")) {
+          return (
+            <main class=" grid lg:grid-cols-4">
+              <WikiNavigation />
+              <slot name="body-content" />
+            </main>
+          );
+        }
+      }
+    }
+
     <Footer />
     <BottomBodyScripts />
   </body>

@@ -17,6 +17,7 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths;
 
 const { entry } = Astro.props;
+const { Content } = await entry.render();
 type Props = {
   entry: CollectionEntry<"wiki">;
 };
@@ -24,6 +25,6 @@ type Props = {
 
 <MainLayout>
   <Fragment slot="body-content">
-    <main class="grid lg:grid-cols-[1fr_7fr]">asdf</main>
+    <div class="prose lg:p-20 bg-cu-primary/75 p-4 lg:mx-16 lg:my-8 lg:col-span-3 lg:max-w-none rounded lg:prose-lg"><Content /></div>
   </Fragment>
 </MainLayout>

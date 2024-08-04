@@ -20,7 +20,7 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
 
 // https://www.realtimecolors.com/?colors=fce6d3-4d3216-f5c17d-0b8e55-1dc2ed&fonts=Pixelify%20Sans-Wellfleet

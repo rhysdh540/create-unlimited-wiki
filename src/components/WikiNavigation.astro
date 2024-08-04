@@ -2,6 +2,11 @@
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 const wiki = await getCollection("wiki");
+import logo from "@/assets/brand/main-logo-wo-minecraft.png";
+import { Image } from "astro:assets";
+import button from "./Button/Button";
+import { Icon } from "astro-icon/components";
+import brick from "@/assets/textures/brick.jpg";
 
 const postsByCategory = wiki.reduce(
   (acc, post) => {
@@ -13,8 +18,52 @@ const postsByCategory = wiki.reduce(
   },
   {} as { [key: string]: CollectionEntry<"wiki">[] },
 );
-
-console.log("Start Posts By Category");
-console.log(postsByCategory);
-console.log("End Posts By Category");
 ---
+
+<nav class="shadow-2xl shadow-amber-950 bg-zinc-800 bg-blend-soft-light lg:max-w-96">
+  <div class="container mx-auto p-4 flex items-center justify-between lg:items-start lg:justify-normal">
+    <a href="/">
+      <Image src={logo} alt="Create Unlimited Logo" class={`max-w-56 lg:max-w-full`} />
+    </a>
+    <button class={button({ intent: "outline", width: "auto", size: "sm", class: "lg:hidden" })} id="wikiNavButton">
+      <Icon name={`bxs:dock-top`} class="text-5xl" aria-hidden="true" />
+    </button>
+  </div>
+  <ul id="wikiNavMenu" class="space-y-4 lg:h-screen border-t-2 border-cu-primary pt-4">
+    {
+      Object.entries(postsByCategory).map(([category, posts]) => (
+        <li class="px-4 ">
+          <h2 class="text-lg lg:text-2xl mb-2  rounded py-1 px-2  font-bold ">{category.toUpperCase()}</h2>
+          <ul class="flex flex-col gap-2 ml-4 ">
+            {posts.map((post) => (
+              <li class=" p-2 flex  bg-cu-background list-item rounded">
+                <a href={`/wiki/${category}/${post.slug}`} class="hover:underline">
+                  {post.data.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<script>
+  const wikiNavMenu = document.querySelector<HTMLUListElement>("#wikiNavMenu");
+  const wikiNavButton = document.querySelector<HTMLButtonElement>("#wikiNavButton");
+
+  wikiNavButton?.addEventListener("click", () => {
+    wikiNavMenu?.classList.toggle("hidden");
+  });
+  const currentPath = new URL(location.href).pathname;
+  const currentLink = wikiNavMenu?.querySelector<HTMLAnchorElement>(`.list-item:has(a[href="${currentPath}"])`);
+  currentLink?.classList.add("bg-cu-primary");
+  currentLink?.classList.add("text-cu-background");
+</script>
+
+<style>
+  .list-item::after {
+    content: "";
+  }
+</style>

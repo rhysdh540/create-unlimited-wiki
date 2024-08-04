@@ -8,7 +8,6 @@ import { getCollection } from "astro:content";
 
 import getIndexPageFromWiki from "@/utils/getIndexPageFromWiki";
 const indexPage = await getIndexPageFromWiki();
-
 const collections = await getCollection("wiki");
 ---
 
