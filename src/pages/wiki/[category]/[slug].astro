@@ -1,0 +1,29 @@
+---
+import Sidebar from "@/components/WikiNavigation.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
+import type { GetStaticPaths } from "astro";
+import type { CollectionKey } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
+
+export const getStaticPaths = (async () => {
+  const wiki = await getCollection("wiki");
+  return wiki.map((entry) => ({
+    params: {
+      category: entry.data.category,
+      slug: entry.slug,
+    },
+    props: { entry, wiki },
+  }));
+}) satisfies GetStaticPaths;
+
+const { entry } = Astro.props;
+type Props = {
+  entry: CollectionEntry<"wiki">;
+};
+---
+
+<MainLayout>
+  <Fragment slot="body-content">
+    <main class="grid lg:grid-cols-[1fr_7fr]">asdf</main>
+  </Fragment>
+</MainLayout>

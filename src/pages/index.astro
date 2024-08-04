@@ -4,6 +4,12 @@ import button from "@/components/Button/Button";
 import { Icon } from "astro-icon/components";
 import logo from "@/assets/brand/main-logo.png";
 import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+import getIndexPageFromWiki from "@/utils/getIndexPageFromWiki";
+const indexPage = await getIndexPageFromWiki();
+
+const collections = await getCollection("wiki");
 ---
 
 <MainLayout>
@@ -17,7 +23,7 @@ import { Image } from "astro:assets";
             omnis eaque sint magni minima non, exercitationem laboriosam aperiam aliquid libero. Praesentium deleniti illum eaque?
           </p>
           <div class="gap-4 flex items-center flex-col">
-            <button class={button({ size: "lg" })}>Check out the wiki</button>
+            <a href={`/wiki/${indexPage.data.category}/${indexPage.slug}`} class={button({ size: "lg" })}>Check out the wiki</a>
             <div class="flex flex-col lg:flex-row gap-4">
               <button class={button({ intent: "secondary", width: "auto" })}
                 ><Icon name={`simple-icons:modrinth`} class="text-3xl mr-2" aria-hidden="true" />Download the mod on Modrinth</button

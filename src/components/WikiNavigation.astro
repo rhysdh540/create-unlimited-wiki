@@ -1,0 +1,20 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+const wiki = await getCollection("wiki");
+
+const postsByCategory = wiki.reduce(
+  (acc, post) => {
+    if (!acc[post.data.category]) {
+      acc[post.data.category] = [];
+    }
+    acc[post.data.category].push(post);
+    return acc;
+  },
+  {} as { [key: string]: CollectionEntry<"wiki">[] },
+);
+
+console.log("Start Posts By Category");
+console.log(postsByCategory);
+console.log("End Posts By Category");
+---

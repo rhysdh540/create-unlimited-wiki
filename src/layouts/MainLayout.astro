@@ -10,6 +10,8 @@ import "@fontsource-variable/pixelify-sans";
 import wellFleet from "@fontsource/wellfleet/files/wellfleet-latin-400-normal.woff2?url";
 import pixelifySans from "@fontsource-variable/pixelify-sans/files/pixelify-sans-latin-wght-normal.woff2?url";
 import plankTexture from "@/assets/textures/plank-texture.webp";
+import WikiNavigation from "@/components/WikiNavigation.astro";
+console.log(Astro.url.pathname);
 ---
 
 <!doctype html>
@@ -30,7 +32,7 @@ import plankTexture from "@/assets/textures/plank-texture.webp";
     }}
   >
     <TopBodyScripts />
-    <Navbar />
+    {Astro.url.pathname === "/" ? <Navbar /> : <WikiNavigation />}
     <slot name="body-content" />
     <Footer />
     <BottomBodyScripts />

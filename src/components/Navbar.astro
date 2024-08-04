@@ -3,6 +3,8 @@ import logo from "@/assets/brand/main-logo-wo-minecraft.png";
 import { Image } from "astro:assets";
 import button from "@/components/Button/Button";
 import { Icon } from "astro-icon/components";
+import getIndexPageFromWiki from "@/utils/getIndexPageFromWiki";
+const indexPage = await getIndexPageFromWiki();
 ---
 
 {
@@ -18,7 +20,7 @@ import { Icon } from "astro-icon/components";
               <Icon name={`bxs:dock-top`} class="text-5xl" aria-hidden="true" />
             </button>
             <div class=" flex flex-col hidden lg:flex gap-4 lg:items-center w-full lg:w-auto lg:flex-row  " id="navMenu">
-              <a href="/wiki" class={button({ intent: "outline" })}>
+              <a href={`/wiki/${indexPage.data.category}/${indexPage.slug}`} class={button({ intent: "outline" })}>
                 Wiki
               </a>
               <a href="https://discord.gg/GeGm3DRDWY" class={button({ intent: "outline" })}>
