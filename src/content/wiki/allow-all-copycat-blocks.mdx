@@ -4,4 +4,13 @@ category: Miscellaneous
 isWikiIndex: true
 ---
 
+import AcceptedValuesComponent from "@/components/AcceptedValuesComponent.astro";
+import MinecraftCommandComponent from "@/components/MinecraftCommandComponent.astro";
+import BeforeAndAfterComponent from "@/components/BeforeAndAfterComponent.astro";
+
+# Allow All Copycat Blocks
+
 Whether or not to allow all blocks to be inserted into Copycat blocks.
+
+<AcceptedValuesComponent values={["true", "false"]} defaultValue="false" />
+<MinecraftCommandComponent>/createunlimited config misc allowAllCopycatBlocks *value*</MinecraftCommandComponent>

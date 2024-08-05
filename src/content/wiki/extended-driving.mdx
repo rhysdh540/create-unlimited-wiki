@@ -3,5 +3,13 @@ title: Extended Driving
 category: Trains
 ---
 
-The minimum turn that trains can drive on. Set to 0.01 if buggy.
-Allowed values from 0 to 0.875
+import AcceptedValuesComponent from "@/components/AcceptedValuesComponent.astro";
+import MinecraftCommandComponent from "@/components/MinecraftCommandComponent.astro";
+import BeforeAndAfterComponent from "@/components/BeforeAndAfterComponent.astro";
+
+# Extended Driving
+
+Changing this value changes the maximum angle between track edges that can be recognized as a connection, effectively allowing for more "cursed" turns to be driven over. Lower values correlate with looser restrictions. Setting extendedDriving to 0 may cause some issues with trains turning on curves that they shouldn't; hence, I recommend setting this to a value slightly above 0, such as 0.01.
+
+<AcceptedValuesComponent values={["0", "0.875"]} defaultValue="0.875" />
+<MinecraftCommandComponent>/createunlimited config trains extendedDriving *value*</MinecraftCommandComponent>
