@@ -59,8 +59,8 @@ const postsByCategory = wiki.reduce(
 
   const currentLocation = window.location.pathname;
   console.log(currentLocation);
-
   const currentWikiItem = document.querySelector<HTMLLIElement>(`.wikiItem:has(a[href="${currentLocation}"])`);
+  console.log(currentWikiItem);
   currentWikiItem?.classList.add("bg-cu-primary");
   currentWikiItem?.classList.add("text-cu-background");
 </script>
