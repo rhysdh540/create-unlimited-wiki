@@ -57,10 +57,12 @@ const postsByCategory = wiki.reduce(
     wikiNavMenu?.classList.toggle("hidden");
   });
 
-  const currentLocation = window.location.pathname;
-  console.log(currentLocation);
-  const currentWikiItem = document.querySelector<HTMLLIElement>(`.wikiItem:has(a[href="${currentLocation}"])`);
-  console.log(currentWikiItem);
-  currentWikiItem?.classList.add("bg-cu-primary");
-  currentWikiItem?.classList.add("text-cu-background");
+  window.addEventListener("DOMContentLoaded", () => {
+    const currentLocation = window.location.pathname;
+    console.log(currentLocation);
+    const currentWikiItem = document.querySelector<HTMLLIElement>(`.wikiItem:has(a[href="${currentLocation}"])`);
+    console.log(currentWikiItem);
+    currentWikiItem?.classList.add("bg-cu-primary");
+    currentWikiItem?.classList.add("text-cu-background");
+  });
 </script>
