@@ -8,6 +8,9 @@ import button from "./Button/Button";
 import { Icon } from "astro-icon/components";
 import brick from "@/assets/textures/brick.jpg";
 
+const currentUrl = Astro.url.pathname;
+console.log(currentUrl);
+
 const postsByCategory = wiki.reduce(
   (acc, post) => {
     if (!acc[post.data.category]) {
@@ -36,7 +39,7 @@ const postsByCategory = wiki.reduce(
           <h2 class="text-lg lg:text-2xl mb-2  rounded py-1 px-2  font-bold ">{category.toUpperCase()}</h2>
           <ul class="flex flex-col gap-2 ml-4 ">
             {posts.map((post) => (
-              <li class=" p-2 flex  bg-cu-background wikiItem rounded">
+              <li class={` p-2 flex  bg-cu-background wikiItem rounded ${currentUrl.includes(post.slug) && `bg-cu-primary text-cu-background`}`}>
                 <a href={`/wiki/${category}/${post.slug}`} class="hover:underline">
                   {post.data.title}
                 </a>
@@ -48,21 +51,3 @@ const postsByCategory = wiki.reduce(
     }
   </ul>
 </nav>
-
-<script>
-  const wikiNavMenu = document.querySelector<HTMLUListElement>("#wikiNavMenu");
-  const wikiNavButton = document.querySelector<HTMLButtonElement>("#wikiNavButton");
-
-  wikiNavButton?.addEventListener("click", () => {
-    wikiNavMenu?.classList.toggle("hidden");
-  });
-
-  window.addEventListener("DOMContentLoaded", () => {
-    const currentLocation = window.location.pathname;
-    console.log(currentLocation);
-    const currentWikiItem = document.querySelector<HTMLLIElement>(`.wikiItem:has(a[href="${currentLocation}"])`);
-    console.log(currentWikiItem);
-    currentWikiItem?.classList.add("bg-cu-primary");
-    currentWikiItem?.classList.add("text-cu-background");
-  });
-</script>
