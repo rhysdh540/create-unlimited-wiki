@@ -1,10 +1,8 @@
 ---
-import Sidebar from "@/components/WikiNavigation.astro";
 import MainLayout from "@/layouts/MainLayout.astro";
 import type { GetStaticPaths } from "astro";
-import type { CollectionKey } from "astro:content";
 import { type CollectionEntry, getCollection } from "astro:content";
-import { SEO, type SEOProps } from "astro-seo";
+import { SEO } from "astro-seo";
 
 export const getStaticPaths = (async () => {
   const wiki = await getCollection("wiki");

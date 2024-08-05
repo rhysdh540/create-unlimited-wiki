@@ -4,11 +4,9 @@ import button from "@/components/Button/Button";
 import { Icon } from "astro-icon/components";
 import logo from "@/assets/brand/main-logo.png";
 import { Image } from "astro:assets";
-import { getCollection } from "astro:content";
 
 import getIndexPageFromWiki from "@/utils/getIndexPageFromWiki";
 const indexPage = await getIndexPageFromWiki();
-const collections = await getCollection("wiki");
 ---
 
 <MainLayout>

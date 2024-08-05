@@ -13,11 +13,11 @@ const { before, after } = Astro.props;
   <div class="relative">
     <Image src={oakSign} alt={`Before`} class="rounded-lg absolute -top-4 left-1/2 -translate-x-1/2 w-24 lg:w-36 shadow-2xl" />
     <span class="text-xl font-headings font-bold absolute top-4 lg:top-8 left-1/2 -translate-x-1/2 lg:text-3xl">Before</span>
-    <Image src={before} alt={`Before`} class="rounded-lg" widths={[384, 512]} sizes={`(max-width:430px) 384px, (max-width:768px) 512px 512`} />
+    <Image src={before} alt={`Before`} class="rounded-lg" widths={[384, 768]} sizes={`(max-width:430px) 384px, (max-width:768px) 768px `} />
   </div>
   <div class="relative">
     <Image src={oakSign} alt={`Before`} class="rounded-lg absolute -top-4 left-1/2 -translate-x-1/2 w-24 lg:w-36 shadow-2xl" />
     <span class="text-xl font-headings font-bold absolute top-4 lg:top-8 left-1/2 -translate-x-1/2 lg:text-3xl">After</span>
-    <Image src={after} alt={`Before`} class="rounded-lg" widths={[384, 512]} sizes={`(max-width:430px) 384px, (max-width:768px) 512px 512`} />
+    <Image src={after} alt={`Before`} class="rounded-lg" widths={[384, 768]} sizes={`(max-width:430px) 384px, (max-width:768px) 768px `} />
   </div>
 </div>
