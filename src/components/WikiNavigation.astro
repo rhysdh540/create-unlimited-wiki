@@ -51,3 +51,12 @@ const postsByCategory = wiki.reduce(
     }
   </ul>
 </nav>
+
+<script>
+  const wikiNavButton = document.querySelector<HTMLButtonElement>("#wikiNavButton");
+  const wikiNavMenu = document.querySelector<HTMLUListElement>("#wikiNavMenu");
+
+  wikiNavButton?.addEventListener("click", () => {
+    wikiNavMenu?.classList.toggle("hidden");
+  });
+</script>

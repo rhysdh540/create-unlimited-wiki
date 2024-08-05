@@ -4,6 +4,7 @@ import MainLayout from "@/layouts/MainLayout.astro";
 import type { GetStaticPaths } from "astro";
 import type { CollectionKey } from "astro:content";
 import { type CollectionEntry, getCollection } from "astro:content";
+import { SEO, type SEOProps } from "astro-seo";
 
 export const getStaticPaths = (async () => {
   const wiki = await getCollection("wiki");
@@ -28,5 +29,8 @@ type Props = {
     <div class="prose-sm m-4 lg:p-20 bg-cu-primary/75 p-4 lg:mx-16 lg:my-8 lg:col-span-3 lg:max-w-none rounded lg:prose-lg prose-a:underline">
       <Content />
     </div>
+  </Fragment>
+  <Fragment slot="additional-head-content">
+    <SEO title={entry.data.title} description={entry.data.description} />
   </Fragment>
 </MainLayout>
