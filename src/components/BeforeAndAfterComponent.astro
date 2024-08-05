@@ -1,0 +1,23 @@
+---
+import { Image } from "astro:assets";
+import oakSign from "@/assets/textures/oak-sign.png";
+type Props = {
+  before: ImageMetadata;
+  after: ImageMetadata;
+};
+
+const { before, after } = Astro.props;
+---
+
+<div class="grid gap-4 lg:grid-cols-2 lg:gap-16">
+  <div class="relative">
+    <Image src={oakSign} alt={`Before`} class="rounded-lg absolute -top-4 left-1/2 -translate-x-1/2 w-24 lg:w-36 shadow-2xl" />
+    <span class="text-xl font-headings font-bold absolute top-4 lg:top-8 left-1/2 -translate-x-1/2 lg:text-3xl">Before</span>
+    <Image src={before} alt={`Before`} class="rounded-lg" />
+  </div>
+  <div class="relative">
+    <Image src={oakSign} alt={`Before`} class="rounded-lg absolute -top-4 left-1/2 -translate-x-1/2 w-24 lg:w-36 shadow-2xl" />
+    <span class="text-xl font-headings font-bold absolute top-4 lg:top-8 left-1/2 -translate-x-1/2 lg:text-3xl">After</span>
+    <Image src={after} alt={`Before`} class="rounded-lg" />
+  </div>
+</div>

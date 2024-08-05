@@ -1,0 +1,56 @@
+---
+import sign from "@/assets/textures/oak-sign.png";
+type Props = {
+  values: string[];
+  defaultValue: string;
+};
+
+const { values, defaultValue } = Astro.props;
+---
+
+{
+  () => {
+    if (values.length == 2) {
+      return (
+        <Fragment>
+          <p class="font-headings font-bold text-2xl lg:text-3xl !my-2">
+            Accepted values {defaultValue && <span class="font-body  text-base ">{`default value is ${defaultValue}`}</span>}
+          </p>
+          <ul class="flex gap-4 items-center mb-4 mt-2">
+            {values.map((value, i) => {
+              return (
+                <Fragment>
+                  <li style={{ backgroundImage: `url(${sign.src})` }} class="w-28 h-12 grid place-items-center font-headings text-2xl !ps-0 !my-0 ">
+                    {value}
+                  </li>
+                  {i === 0 && <span class:list="text-2xl"> &LessLess; </span>}
+                </Fragment>
+              );
+            })}
+          </ul>
+        </Fragment>
+      );
+    } else if (values.length === 3) {
+      return (
+        <Fragment>
+          <p class="font-headings font-bold text-2xl lg:text-3xl !my-2">
+            Accepted values {defaultValue && <span class="font-body   text-base ">{`default value is ${defaultValue}`}</span>}
+          </p>
+          <ul class="flex gap-4 items-start lg:flex-row lg:items-center mb-4 mt-2 flex-col ">
+            {values.map((value, i) => {
+              return (
+                <Fragment>
+                  <li style={{ backgroundImage: `url(${sign.src})` }} class="w-28 h-12 grid place-items-center font-headings text-2xl !ps-0 !my-0 ">
+                    {value}
+                  </li>
+                  {i === 0 && <span class:list="text-2xl"> &LessLess; </span>}
+                  {i === 1 && <span class:list="text-2xl"> &LessLess; </span>}
+                </Fragment>
+              );
+            })}
+          </ul>
+        </Fragment>
+      );
+    }
+  }
+}

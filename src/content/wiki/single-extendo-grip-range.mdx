@@ -1,0 +1,19 @@
+---
+title: Single Extendo Grip Range
+category: Extendo-Grip
+---
+
+import AcceptedValuesComponent from "@/components/AcceptedValuesComponent.astro";
+import MinecraftCommandComponent from "@/components/MinecraftCommandComponent.astro";
+import extendoBefore from "@/assets/wiki/single-extendo-grip-range/extendo-before.png";
+import extendoAfter from "@/assets/wiki/single-extendo-grip-range/extendo-after.png";
+import BeforeAndAfterComponent from "@/components/BeforeAndAfterComponent.astro";
+import { Image } from "astro:assets";
+
+# Single Extendo Grip Range
+
+Influences how much to extend your reach when holding an Extendo-Grip. Adds to your base reach.
+
+<AcceptedValuesComponent values={[0, "infinity"]} defaultValue="3" />
+<MinecraftCommandComponent>/createunlimited config extendo singleExtendoGripRange *value*</MinecraftCommandComponent>
+<BeforeAndAfterComponent before={extendoBefore} after={extendoAfter} />
