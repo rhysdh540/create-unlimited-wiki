@@ -1,5 +1,7 @@
 # Create:Unlimited Wiki How-To use guide
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/868f3c3a-3d7b-4798-89a4-adfa0d2da3d5/deploy-status)](https://app.netlify.com/sites/create-unlimited-wiki/deploys)
+
 Hey there! Hope you enjoyed browsing the wiki. If you want to create more pages, or edit some things here and there you're in the right place.
 
 - [Create:Unlimited Wiki How-To use guide](#createunlimited-wiki-how-to-use-guide)
