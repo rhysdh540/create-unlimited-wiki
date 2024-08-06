@@ -41,7 +41,9 @@ To delete a wiki article, delete the `.mdx` file associated with it. Do note tha
 
 To edit a wiki article, click on it and add whatever you want. You can add components inside of it and write markdown and JSX (an HTML alternative which supports javascript to be written inside of it.)
 
-To publish your changes, commit and push them on GitHub. After you do that - Netlify will start a build process which will re-generate the site with the new content. To check the state of the build process - go into your Netlify Deploys page.
+To publish your changes, commit and push them on GitHub. After you do that - Netlify will start a build process which will re-generate the site with the new content. To check the state of the build process - go into your Netlify Deploys page - **_or_** - take a look at the Netlify Deployment Status badge at the top of the repo's readme.
+
+![Netlify Deployment Status Badge](/src/assets/readme/deployment-status-badges.png)
 
 ## Import pictures
 
