@@ -23,7 +23,7 @@ const { values, defaultValue } = Astro.props;
                   <li style={{ backgroundImage: `url(${sign.src})` }} class="w-28 h-12 grid place-items-center  text-2xl !ps-0 !my-0 ">
                     {value}
                   </li>
-                  {i === 0 && <span class:list="text-2xl"> &LessLess; </span>}
+                  {i === 0 && <span class:list="text-2xl"> &mdash; </span>}
                 </Fragment>
               );
             })}
@@ -40,11 +40,11 @@ const { values, defaultValue } = Astro.props;
             {values.map((value, i) => {
               return (
                 <Fragment>
-                  <li style={{ backgroundImage: `url(${sign.src})` }} class="w-28 h-12 grid place-items-center  text-2xl !ps-0 !my-0 ">
+                  <li style={{ backgroundImage: `url(${sign.src})` }} class="py-2 px-4   text-2xl  !my-0">
                     {value}
                   </li>
-                  {i === 0 && <span class:list="text-2xl"> &LessLess; </span>}
-                  {i === 1 && <span class:list="text-2xl"> &LessLess; </span>}
+                  {i === 0 && <span class:list="text-2xl"> &mdash; </span>}
+                  {i === 1 && <span class:list="text-2xl"> &mdash; </span>}
                 </Fragment>
               );
             })}

@@ -3,6 +3,12 @@ title: Max Allowed Stress
 category: Trains
 ---
 
+import AcceptedValuesComponent from "@/components/AcceptedValuesComponent.astro";
+import MinecraftCommandComponent from "@/components/MinecraftCommandComponent.astro";
+
+# Max Allowed Stress
+
 Maximum stress from couplings before train derails. Set to -1 to disable stress completely.
 
-Default value 0.5
+<AcceptedValuesComponent values={[-1, "infinity"]} defaultValue="0.5" />
+<MinecraftCommandComponent>/createunlimited config train maxAllowedStress *value*</MinecraftCommandComponent>

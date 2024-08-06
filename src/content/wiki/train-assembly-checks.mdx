@@ -3,4 +3,12 @@ title: Train Assembly Checks
 category: Trains
 ---
 
+import AcceptedValuesComponent from "@/components/AcceptedValuesComponent.astro";
+import MinecraftCommandComponent from "@/components/MinecraftCommandComponent.astro";
+
+# Train Assembly Checks
+
 Whether to check for valid assembly when placing train tracks.
+
+<AcceptedValuesComponent values={["true", "false"]} defaultValue="true" />
+<MinecraftCommandComponent>/createunlimited config train trainAssemblyChecks *value*</MinecraftCommandComponent>

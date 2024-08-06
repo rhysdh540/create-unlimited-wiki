@@ -3,6 +3,12 @@ title: Placement Checks
 category: Trains
 ---
 
-Whether to check for valid placement when placing train tracks.
+import AcceptedValuesComponent from "@/components/AcceptedValuesComponent.astro";
+import MinecraftCommandComponent from "@/components/MinecraftCommandComponent.astro";
 
-Allowed values: ON, SURVIVALONLY, OFF
+# Placement Checks
+
+Whether to check for valid placement when placing train tracks. Essentially allows for the placement of "illegal" tracks.
+
+<AcceptedValuesComponent values={["ON", "SURVIVALONLY", "OFF"]} defaultValue="ON" />
+<MinecraftCommandComponent>/createunlimited config train placementChecks *value*</MinecraftCommandComponent>

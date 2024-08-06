@@ -1,0 +1,14 @@
+---
+title: Max Track Block Placing
+category: Trains
+---
+
+import AcceptedValuesComponent from "@/components/AcceptedValuesComponent.astro";
+import MinecraftCommandComponent from "@/components/MinecraftCommandComponent.astro";
+
+# Max track block placing distance
+
+Maximum distance a track-targeting block can be placed away from a track
+
+<AcceptedValuesComponent values={[0, "infinity"]} defaultValue="16" />
+<MinecraftCommandComponent>/createunlimited config train maxTrackBlockPlacingDistance *value*</MinecraftCommandComponent>

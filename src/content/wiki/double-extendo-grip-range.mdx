@@ -3,8 +3,14 @@ title: Double Extendo Grip Range
 category: extendo-grip
 ---
 
+import AcceptedValuesComponent from "@/components/AcceptedValuesComponent.astro";
+import MinecraftCommandComponent from "@/components/MinecraftCommandComponent.astro";
+
 # Double Extendo Grip Range
 
 Influences how much to extend your reach when holding two Extendo-Grips. Adds to your base reach.
+
+<AcceptedValuesComponent values={[0, "infinity"]} defaultValue="5" />
+<MinecraftCommandComponent>/createunlimited config extendo doubleExtendoGripRange *value*</MinecraftCommandComponent>
 
 [See Single Extendo Grip for more info...](/wiki/extendo-grip/single-extendo-grip-range)

@@ -3,4 +3,12 @@ title: Maximum Glue Connection Range
 category: Glue
 ---
 
+import AcceptedValuesComponent from "@/components/AcceptedValuesComponent.astro";
+import MinecraftCommandComponent from "@/components/MinecraftCommandComponent.astro";
+
+# Maximum Glue Connection Range
+
 Maximum distance between two blocks for them to be considered for glue connections.
+
+<AcceptedValuesComponent values={["0", "infinity"]} defaultValue="24" />
+<MinecraftCommandComponent>/createunlimited config glue maxGlueConnectionRange *value*</MinecraftCommandComponent>

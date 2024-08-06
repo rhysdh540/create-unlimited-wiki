@@ -3,4 +3,12 @@ title: Max Train Relocation Distance
 category: Trains
 ---
 
+import AcceptedValuesComponent from "@/components/AcceptedValuesComponent.astro";
+import MinecraftCommandComponent from "@/components/MinecraftCommandComponent.astro";
+
+# Max Train Relocation Distance
+
 Maximum distance a train can be relocated using the wrench.
+
+<AcceptedValuesComponent values={["0", "infinity"]} defaultValue="24" />
+<MinecraftCommandComponent>/createunlimited config train maxTrainRelocationDistance *value*</MinecraftCommandComponent>

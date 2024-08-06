@@ -15,20 +15,55 @@ export const getStaticPaths = (async () => {
   }));
 }) satisfies GetStaticPaths;
 
-const { entry } = Astro.props;
+const { entry, wiki } = Astro.props;
 const { Content } = await entry.render();
 type Props = {
   entry: CollectionEntry<"wiki">;
+  wiki: CollectionEntry<"wiki">[];
 };
+
+function getPreviousAndNextEntryInCategory() {
+  const currentCategoryArticles = wiki.filter((article) => article.data.category === entry.data.category);
+  const currentIndex = currentCategoryArticles.findIndex((article) => article.slug === entry.slug);
+  const previousEntry = currentCategoryArticles[currentIndex - 1] || undefined;
+  const nextEntry = currentCategoryArticles[currentIndex + 1] || undefined;
+  return { previousEntry, nextEntry };
+}
+const { previousEntry, nextEntry } = getPreviousAndNextEntryInCategory();
 ---
 
 <MainLayout>
   <Fragment slot="body-content">
     <div class="prose-sm m-4 lg:p-20 bg-cu-primary/75 p-4 lg:mx-16 lg:my-8 lg:col-span-3 lg:max-w-none rounded lg:prose-lg prose-a:underline">
       <Content />
+      <nav>
+        <ul class="flex justify-between gap-4 mt-auto">
+          {
+            previousEntry && (
+              <li class="p-2 border-2 rounded hover:border-white/50 ">
+                <span class="block text-sm italic">More about {previousEntry.data.category}...</span>
+                <a href={`/wiki/${previousEntry.data.category}/${previousEntry.slug}`} class="text-cu-primary-500 hover:text-cu-primary-700">
+                  &larr; {previousEntry.data.title}
+                </a>
+              </li>
+            )
+          }
+          {
+            nextEntry && (
+              <li class="p-2 border-2 rounded text-right hover:border-white/50 ">
+                <span class="block text-sm italic">More about {nextEntry.data.category}...</span>
+
+                <a href={`/wiki/${nextEntry.data.category}/${nextEntry.slug}`} class="text-cu-primary-500 hover:text-cu-primary-700">
+                  {nextEntry.data.title} &rarr;
+                </a>
+              </li>
+            )
+          }
+        </ul>
+      </nav>
     </div>
-  </Fragment>
-  <Fragment slot="additional-head-content">
-    <SEO title={entry.data.title} description={entry.data.description} titleTemplate="%s - Create Unlimited" />
+    <Fragment slot="additional-head-content">
+      <SEO title={entry.data.title} description={entry.data.description} titleTemplate="%s - Create Unlimited" />
+    </Fragment>
   </Fragment>
 </MainLayout>
