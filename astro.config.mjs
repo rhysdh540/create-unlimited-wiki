@@ -10,4 +10,6 @@ import icon from "astro-icon";
 export default defineConfig({
   integrations: [react(), mdx(), sitemap(), tailwind(), icon()],
   output: "static",
+  base: "/create-unlimited-wiki",
+  trailingSlash: "never",
 });
