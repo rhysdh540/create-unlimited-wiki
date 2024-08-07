@@ -1,6 +1,6 @@
 # Create:Unlimited Wiki How-To use guide
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/868f3c3a-3d7b-4798-89a4-adfa0d2da3d5/deploy-status)](https://app.netlify.com/sites/create-unlimited-wiki/deploys)
+[//]: # ([![Netlify Status]&#40;https://api.netlify.com/api/v1/badges/868f3c3a-3d7b-4798-89a4-adfa0d2da3d5/deploy-status&#41;]&#40;https://app.netlify.com/sites/create-unlimited-wiki/deploys&#41;)
 
 Hey there! Hope you enjoyed browsing the wiki. If you want to create more pages, or edit some things here and there you're in the right place.
 
@@ -41,9 +41,7 @@ To delete a wiki article, delete the `.mdx` file associated with it. Do note tha
 
 To edit a wiki article, click on it and add whatever you want. You can add components inside of it and write markdown and JSX (an HTML alternative which supports javascript to be written inside of it.)
 
-To publish your changes, commit and push them on GitHub. After you do that - Netlify will start a build process which will re-generate the site with the new content. To check the state of the build process - go into your Netlify Deploys page - **_or_** - take a look at the Netlify Deployment Status badge at the top of the repo's readme.
-
-![Netlify Deployment Status Badge](/src/assets/readme/deployment-status-badges.png)
+To publish your changes, commit and push them on GitHub. After you do that - GH Actions will start a build process which will re-generate the site with the new content. To check the state of the build process - go into the Actions tab - **_or_** - take a look at the Actions Status badge at the top of the repo's readme.
 
 ## Import pictures
 
@@ -62,7 +60,7 @@ import yourPictureNameCanBeAnything from "@/assets/[yourPicturePathOrName]";
 At the top of the `.mdx` file, just after the front-matter, write the following syntax:
 
 ```javascript
-import componentNameGoesHere from "@/components/[componentPathOrNameGoesHere]":
+import componentNameGoesHere from "@/components/[componentPathOrNameGoesHere]";
 ```
 
 > **_Note_** : _Imports_ go at the top of the document, right after the front-matter.
