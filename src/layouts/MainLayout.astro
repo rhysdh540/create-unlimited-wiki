@@ -11,7 +11,6 @@ import wellFleet from "@fontsource/wellfleet/files/wellfleet-latin-400-normal.wo
 import pixelifySans from "@fontsource-variable/pixelify-sans/files/pixelify-sans-latin-wght-normal.woff2?url";
 import plankTexture from "@/assets/textures/plank-texture.webp";
 import WikiNavigation from "@/components/WikiNavigation.astro";
-console.log(Astro.url.pathname);
 ---
 
 <!doctype html>
@@ -35,14 +34,7 @@ console.log(Astro.url.pathname);
 
     {
       () => {
-        if (Astro.url.pathname === "/create-unlimited-wiki/") {
-          return (
-            <Fragment>
-              <Navbar />
-              <slot name="body-content" />
-            </Fragment>
-          );
-        } else if (Astro.url.pathname.includes("/wiki")) {
+        if (Astro.url.pathname.includes("/wiki")) {
           return (
             <main class=" grid lg:grid-cols-4">
               <WikiNavigation />
@@ -50,7 +42,12 @@ console.log(Astro.url.pathname);
             </main>
           );
         } else {
-          <slot name="body-content" />;
+          return (
+            <Fragment>
+              <Navbar />
+              <slot name="body-content" />;
+            </Fragment>
+          );
         }
       }
     }
