@@ -35,7 +35,7 @@ console.log(Astro.url.pathname);
 
     {
       () => {
-        if (Astro.url.pathname === "/") {
+        if (Astro.url.pathname === "/create-unlimited-wiki/") {
           return (
             <Fragment>
               <Navbar />
@@ -49,6 +49,8 @@ console.log(Astro.url.pathname);
               <slot name="body-content" />
             </main>
           );
+        } else {
+          <slot name="body-content" />;
         }
       }
     }

@@ -42,7 +42,10 @@ const { previousEntry, nextEntry } = getPreviousAndNextEntryInCategory();
             previousEntry && (
               <li class="p-2 border-2 rounded hover:border-white/50 ">
                 <span class="block text-sm italic">More about {previousEntry.data.category}...</span>
-                <a href={`/wiki/${previousEntry.data.category}/${previousEntry.slug}`} class="text-cu-primary-500 hover:text-cu-primary-700">
+                <a
+                  href={`/create-unlimited-wiki/wiki/${previousEntry.data.category}/${previousEntry.slug}`}
+                  class="text-cu-primary-500 hover:text-cu-primary-700"
+                >
                   &larr; {previousEntry.data.title}
                 </a>
               </li>
@@ -53,7 +56,7 @@ const { previousEntry, nextEntry } = getPreviousAndNextEntryInCategory();
               <li class="p-2 border-2 rounded text-right hover:border-white/50 ">
                 <span class="block text-sm italic">More about {nextEntry.data.category}...</span>
 
-                <a href={`/wiki/${nextEntry.data.category}/${nextEntry.slug}`} class="text-cu-primary-500 hover:text-cu-primary-700">
+                <a href={`/create-unlimited-wiki/wiki/${nextEntry.data.category}/${nextEntry.slug}`} class="text-cu-primary-500 hover:text-cu-primary-700">
                   {nextEntry.data.title} &rarr;
                 </a>
               </li>
@@ -62,8 +65,8 @@ const { previousEntry, nextEntry } = getPreviousAndNextEntryInCategory();
         </ul>
       </nav>
     </div>
-    <Fragment slot="additional-head-content">
-      <SEO title={entry.data.title} description={entry.data.description} titleTemplate="%s - Create Unlimited" />
-    </Fragment>
+  </Fragment>
+  <Fragment slot="additional-head-content">
+    <SEO title={entry.data.title} description={entry.data.description} titleTemplate="%s - Create Unlimited" />
   </Fragment>
 </MainLayout>

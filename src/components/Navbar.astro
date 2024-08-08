@@ -13,14 +13,14 @@ const indexPage = await getIndexPageFromWiki();
       <nav class="shadow-2xl shadow-amber-950">
         <div class="container mx-auto">
           <div class="flex items-center p-4 gap-4 flex-wrap">
-            <a href="/" class="flex items-center mr-auto">
+            <a href="/create-unlimited-wiki" class="flex items-center mr-auto">
               <Image src={logo} alt="Create Unlimited Logo" class={`max-w-48 lg:max-w-96`} />
             </a>
             <button class={button({ intent: "outline", width: "auto", size: "sm", class: "lg:hidden" })} id="navButton">
               <Icon name={`bxs:dock-top`} class="text-5xl" aria-hidden="true" />
             </button>
             <div class=" flex flex-col hidden lg:flex gap-4 lg:items-center w-full lg:w-auto lg:flex-row  " id="navMenu">
-              <a href={`/wiki/${indexPage.data.category}/${indexPage.slug}`} class={button({ intent: "outline" })}>
+              <a href={`/create-unlimited-wiki/wiki/${indexPage.data.category}/${indexPage.slug}`} class={button({ intent: "outline" })}>
                 Wiki
               </a>
               <a href="https://discord.gg/GeGm3DRDWY" class={button({ intent: "outline" })}>
